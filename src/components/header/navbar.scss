@@ -1,0 +1,143 @@
+ .navbar,
+ .offcanvas__sidebar {
+
+     #offcanvasNavbar-expand-lg {
+         height: 100% !important;
+     }
+
+     background-color: var(--secondary-color);
+
+     &.navbar__container {
+         height: 60px;
+
+     }
+
+     a {
+         color: var(--main-color);
+         font-weight: 500;
+         font-size: .9rem;
+         text-transform: capitalize;
+         transition: .5s ease-in-out;
+         display: flex;
+         align-items: center;
+         position: relative;
+
+         &.logo__link {
+             &:hover {
+                 color: var(--text-color)
+             }
+         }
+
+         &:not(.logo__link) {
+             &::after {
+                 content: "";
+                 position: absolute;
+                 bottom: 0;
+                 width: 0%;
+                 height: 3px;
+                 background-color: var(--text-color);
+                 left: 0;
+                 transition: .5s ease-in-out;
+
+             }
+
+             &.active,
+             &:hover {
+                 color: var(--text-color);
+
+                 &::after {
+                     width: 100%;
+                 }
+
+             }
+
+             @media screen and (max-width:992px) {
+                 &::after {
+                     width: 3px;
+                     height: 0;
+                     left: -8px;
+                 }
+
+                 &.active,
+                 &:hover {
+                     color: var(--text-color);
+
+                     &::after {
+                         height: 100%;
+                         width: 3px;
+                     }
+
+                 }
+             }
+         }
+     }
+
+     .ul__list {
+         gap: 0 12px;
+
+
+     }
+
+     .logo {
+         h4 {
+             letter-spacing: 2px;
+         }
+
+     }
+
+     @media screen and (min-width:992px) {
+         .logo {
+             width: 100%;
+         }
+
+         .ul__list {
+             height: 100% !important;
+         }
+     }
+
+     .icons {
+         color: var(--main-color);
+         gap: 10px;
+
+         svg {
+             cursor: pointer;
+             font-style: 1.3rem;
+         }
+
+         .cart__container {
+             position: relative;
+
+             .cart__count {
+                 background-color: var(--main-color);
+                 width: 20px;
+                 height: 20px;
+                 justify-content: center;
+                 border-radius: 50%;
+                 color: var(--secondary-color);
+                 position: absolute;
+                 top: -10px;
+                 right: -10px;
+                 font-size: 12px;
+             }
+         }
+
+     }
+
+     .offcanvas-body {
+         &::-webkit-scrollbar {
+             width: 5px;
+         }
+
+         &::-webkit-scrollbar-track {
+             background: var(--secondary-color)
+         }
+
+         &::-webkit-scrollbar-thumb {
+             background: var(--main-color);
+         }
+     }
+
+     .btn-close {
+         box-shadow: none !important;
+     }
+ }
