@@ -104,7 +104,7 @@ function Header() {
                     </NavLink>
                   </ListGroup>
 
-                  <ListGroup className="d-flex flex-lg-row ul__list icons h-100 align-items-lg-center align-items-md-start">
+                  <ListGroup className="d-flex flex-lg-row ul__list icons h-100 align-items-lg-center align-items-start">
                     <li>
                       <SearchRoundedIcon />
                     </li>
