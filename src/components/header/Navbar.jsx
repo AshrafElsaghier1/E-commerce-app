@@ -19,6 +19,7 @@ function Header() {
           key={expand}
           expand={expand}
           className="navbar navbar__container p-0"
+          collapseOnSelect
         >
           <Container className="h-100">
             <ListGroup
@@ -49,12 +50,13 @@ function Header() {
               </NavLink>
             </ListGroup>
             <div className="logo d-flex justify-content-center h-100 d-flex align-items-center">
-              <h4 className="mb-0 fs-2">
-                <Link to="E-commerce-app/home" className="fs-4 logo__link">
+              <h2 className="mb-0 ">
+                <Link to="E-commerce-app/home" className="fs-3 logo__link">
                   MALOLOO
                 </Link>
-              </h4>
+              </h2>
             </div>
+
             <Navbar.Toggle className="menubar__toggle p-0 border-0  shadow-none" />
 
             <Navbar.Offcanvas
@@ -83,6 +85,7 @@ function Header() {
                     <NavLink
                       to="E-commerce-app/products/1"
                       className="my-2 my-lg-0  "
+                      aria-label="Close"
                     >
                       Woman
                     </NavLink>
@@ -120,6 +123,7 @@ function Header() {
                     >
                       contact
                     </NavLink>
+
                     <NavLink
                       to="E-commerce-app/stores"
                       className="my-2 my-lg-0 h-100"

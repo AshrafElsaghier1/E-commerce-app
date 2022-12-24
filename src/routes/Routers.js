@@ -6,10 +6,10 @@ const Routers = () => {
 
     return (
         <Routes path="/E-commerce-app">
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/products/:id" element={<Products />} />
-            <Route path="/product/:id" element={<Product />} />
+            <Route path="/E-commerce-app" element={<Navigate to="/E-commerce-app/home" />} />
+            <Route path="/E-commerce-app/home" element={<Home />} />
+            <Route path="/E-commerce-app/products/:id" element={<Products />} />
+            <Route path="/E-commerce-app/product/:id" element={<Product />} />
         </Routes>
     )
 
