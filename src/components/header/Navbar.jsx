@@ -26,21 +26,21 @@ function Header() {
               className="ul__list rounded-0 d-none d-lg-flex align-items-center    h-100 "
             >
               <NavLink
-                to="products/1"
+                to="E-commerce-app/products/1"
                 className="d-flex align-items-center    h-100 justify-content-center"
               >
                 Woman
               </NavLink>
 
               <NavLink
-                to="products/2"
+                to="E-commerce-app/products/2"
                 className="d-flex    h-100 align-items-center justify-content-center"
               >
                 Men
               </NavLink>
 
               <NavLink
-                to="products/3"
+                to="E-commerce-app/products/3"
                 className="d-flex align-items-center 
                 h-100  
                 justify-content-center"
@@ -50,7 +50,7 @@ function Header() {
             </ListGroup>
             <div className="logo d-flex justify-content-center h-100 d-flex align-items-center">
               <h4 className="mb-0 fs-2">
-                <Link to="/" className="fs-4 logo__link">
+                <Link to="E-commerce-app/home" className="fs-4 logo__link">
                   MALOLOO
                 </Link>
               </h4>
@@ -65,7 +65,10 @@ function Header() {
             >
               <Offcanvas.Header closeButton className="shadow-none">
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  <Link to="/home" className="fs-4 text-uppercase logo__link">
+                  <Link
+                    to="E-commerce-app/home"
+                    className="fs-4 text-uppercase logo__link"
+                  >
                     maloloo
                   </Link>
                 </Offcanvas.Title>
@@ -77,29 +80,50 @@ function Header() {
                 align-align-items-lg-center align-items-md-start h-100 "
                 >
                   <ListGroup className="ul__list rounded-0 d-flex d-lg-none">
-                    <NavLink to="products/1" className="my-2 my-lg-0  ">
+                    <NavLink
+                      to="E-commerce-app/products/1"
+                      className="my-2 my-lg-0  "
+                    >
                       Woman
                     </NavLink>
 
-                    <NavLink to="products/2" className="my-2 my-lg-0">
+                    <NavLink
+                      to="E-commerce-app/products/2"
+                      className="my-2 my-lg-0"
+                    >
                       Men
                     </NavLink>
 
-                    <NavLink to="products/3" className="my-2 my-lg-0">
+                    <NavLink
+                      to="E-commerce-app/products/3"
+                      className="my-2 my-lg-0"
+                    >
                       Children
                     </NavLink>
                   </ListGroup>
                   <ListGroup className="d-flex flex-lg-row ul__list ">
-                    <NavLink to="/home" className="my-2 my-lg-0 h-100  ">
+                    <NavLink
+                      to="E-commerce-app/home"
+                      className="my-2 my-lg-0 h-100  "
+                    >
                       Home
                     </NavLink>
-                    <NavLink to="/about" className="my-2 my-lg-0 h-100">
+                    <NavLink
+                      to="E-commerce-app/about"
+                      className="my-2 my-lg-0 h-100"
+                    >
                       about
                     </NavLink>
-                    <NavLink to="/contact" className="my-2 my-lg-0 h-100  ">
+                    <NavLink
+                      to="E-commerce-app/contact"
+                      className="my-2 my-lg-0 h-100  "
+                    >
                       contact
                     </NavLink>
-                    <NavLink to="/stores" className="my-2 my-lg-0 h-100">
+                    <NavLink
+                      to="E-commerce-app/stores"
+                      className="my-2 my-lg-0 h-100"
+                    >
                       stores
                     </NavLink>
                   </ListGroup>
