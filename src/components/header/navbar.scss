@@ -79,7 +79,7 @@
      }
 
      .logo {
-         h2 {
+         .logo__link {
              letter-spacing: 2px;
              text-shadow: 2px 7px 3px var(--main-color);
          }
@@ -102,7 +102,7 @@
 
          svg {
              cursor: pointer;
-             font-style: 1.3rem;
+             font-size: 1.3rem;
          }
 
          .cart__container {

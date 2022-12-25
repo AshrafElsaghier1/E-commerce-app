@@ -11,6 +11,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.scss";
+import Routers from "../../routes/Routers";
 function Header() {
   return (
     <>
@@ -65,7 +66,7 @@ function Header() {
               placement="start"
               className="offcanvas__sidebar sidebar h-100 "
             >
-              <Offcanvas.Header closeButton className="shadow-none">
+              <Offcanvas.Header closeButton className="shadow-none logo">
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   <Link
                     to="E-commerce-app/home"
@@ -155,6 +156,7 @@ function Header() {
           </Container>
         </Navbar>
       ))}
+      <Routers />
     </>
   );
 }
