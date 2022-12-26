@@ -2,14 +2,29 @@ import { Col, Container, ListGroup, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import classes from "./footer.module.scss";
-
+import "./footer.css";
+import { useEffect, useState } from "react";
 const Footer = () => {
+  const [open, setOpen] = useState(false);
+  const resizeHandler = () => {
+    if (window.innerWidth < 576) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
   return (
-    <div className={`${classes.footer} py-4`}>
+    <div className={`${classes.footer} pt-5 pb-3`}>
       <Container>
         <Accordion
-          defaultActiveKey={["0", "1", "2", "3"]}
-          alwaysOpen
+          defaultActiveKey={open ? ["0", "1", "2", "3"] : ""}
+          alwaysOpen={open ? true : false}
           className={classes.accordion__container}
         >
           <Row>
@@ -90,34 +105,19 @@ const Footer = () => {
                       className={`px-sm-0  py-3 ${classes.accordion__body}`}
                     >
                       <ListGroup className={`${classes.ul__list} rounded-0  `}>
-                        <NavLink
-                          to="E-commerce-app/products/1"
-                          className="mb-2"
-                        >
+                        <NavLink to="E-commerce-app" className="mb-2">
                           FAQ
                         </NavLink>
-                        <NavLink
-                          to="E-commerce-app/products/2"
-                          className="mb-2"
-                        >
+                        <NavLink to="E-commerce-app" className="mb-2">
                           Pages
                         </NavLink>
-                        <NavLink
-                          to="E-commerce-app/products/2"
-                          className="mb-2"
-                        >
+                        <NavLink to="E-commerce-app" className="mb-2">
                           Stores
                         </NavLink>
-                        <NavLink
-                          to="E-commerce-app/products/2"
-                          className="mb-2"
-                        >
+                        <NavLink to="E-commerce-app" className="mb-2">
                           Compare
                         </NavLink>
-                        <NavLink
-                          to="E-commerce-app/products/2"
-                          className="mb-2"
-                        >
+                        <NavLink to="E-commerce-app" className="mb-2">
                           Cookies
                         </NavLink>
                       </ListGroup>
@@ -147,7 +147,7 @@ const Footer = () => {
                     <Accordion.Body
                       className={`px-sm-0  py-3 ${classes.accordion__body}`}
                     >
-                      <p>
+                      <p className="mb-0">
                         Once upon a time, walking was sort of cool. Back in the
                         1980s, when indoor shopping malls were
                       </p>
@@ -173,7 +173,7 @@ const Footer = () => {
                     <Accordion.Body
                       className={`px-sm-0  py-3 ${classes.accordion__body}`}
                     >
-                      <p>
+                      <p className="mb-0">
                         Once upon a time, walking was sort of cool. Back in the
                         1980s, when indoor shopping malls were
                       </p>
@@ -184,6 +184,11 @@ const Footer = () => {
             </Col>
           </Row>
         </Accordion>
+        <div className="my-2">
+          <p className="text-center mb-0">
+            &#128151; &#169; All copy rights reserved &#128151; &#128514;
+          </p>
+        </div>
       </Container>
     </div>
   );

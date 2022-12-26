@@ -10,9 +10,6 @@
              }
 
              .accordion__header {
-
-
-
                  button {
                      color: #fff;
                      border-radius: 0;
@@ -20,9 +17,10 @@
                      border-radius: 5px 5px 0 0;
                      background-color: var(--main-color);
 
-
                      &:hover {
                          background-color: var(--text-color);
+                         box-shadow: none;
+
                      }
 
                      &::after {
@@ -30,23 +28,26 @@
                      }
                  }
 
-
-
              }
 
              .accordion__body {
                  p {
-                     font-size: .9rem;
+                     font-size: .85rem;
+                     line-height: 1.6;
+                     letter-spacing: 1px;
+                     color: #222;
                  }
 
                  a {
                      transition: .5s ease-out;
-                     font-size: .9rem;
+                     font-size: .85rem;
+                     max-width: max-content;
 
                      &:hover {
                          color: var(--text-color)
                      }
                  }
+
 
                  @media screen and (max-width:575px) {
                      background-color: var(--main-color);
