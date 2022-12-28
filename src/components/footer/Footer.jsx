@@ -1,5 +1,5 @@
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import classes from "./footer.module.scss";
 import "./footer.css";
@@ -30,10 +30,10 @@ const Footer = () => {
           <Row>
             <Col md="6" sm="12">
               <Row>
-                <Col sm="6" className="mb-2">
+                <Col sm="6" className="mb-2 d-flex">
                   <Accordion.Item
                     eventKey="0"
-                    className={`border-0 bg-transparent ${classes.accordion__item}`}
+                    className={`border-0 bg-transparent ${classes.accordion__item} w-100 `}
                   >
                     <h5
                       className={`mb-0 ${classes.heading__title} d-none d-sm-block `}
@@ -185,8 +185,12 @@ const Footer = () => {
           </Row>
         </Accordion>
         <div className="my-2">
-          <p className="text-center mb-0">
-            &#128151; &#169; All copy rights reserved &#128151; &#128514;
+          <p className="text-center mb-0 ">
+            Copyright &#169;&nbsp;
+            <Link to="E-commerce-app" className="text-dark  ">
+              M A L O L O&nbsp;
+            </Link>
+            All Rights Reserved.
           </p>
         </div>
       </Container>

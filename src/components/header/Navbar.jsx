@@ -1,9 +1,8 @@
 import { ListGroup } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
-
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
+import { useEffect, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
@@ -11,16 +10,32 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.scss";
-import Routers from "../../routes/Routers";
+
 function Header() {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setActive(true);
+      } else {
+        setActive(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {["lg"].map((expand) => (
         <Navbar
           key={expand}
           expand={expand}
-          className="navbar navbar__container p-0"
-          collapseOnSelect
+          className={`navbar navbar__container p-0 ${active ? "active" : ""}`}
+          fixed="top"
         >
           <Container className="h-100">
             <ListGroup
@@ -156,7 +171,6 @@ function Header() {
           </Container>
         </Navbar>
       ))}
-      <Routers />
     </>
   );
 }

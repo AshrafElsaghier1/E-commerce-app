@@ -1,6 +1,7 @@
 .accordion-button:not(.collapsed) {
   background-color: var(--text-color) !important;
   box-shadow: none !important;
+  border-radius: 5px 5px 0 0 !important;
 }
 
 @media screen and (min-width: 576px) {

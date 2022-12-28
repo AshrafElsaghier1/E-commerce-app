@@ -1,0 +1,8 @@
+.filter__products_container {
+    background-color: red;
+
+
+    @media screen and (max-width:992px) {
+        order: -1;
+    }
+}
